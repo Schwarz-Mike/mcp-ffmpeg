@@ -1,0 +1,44 @@
+{
+  "name": "mcp-ffmpeg",
+  "version": "1.0.0",
+  "description": "MCP server for professional audio processing with FFmpeg - meditation production and general audio manipulation",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-ffmpeg": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "lint": "eslint src/**/*.ts",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "ffmpeg",
+    "audio",
+    "meditation",
+    "model-context-protocol",
+    "claude"
+  ],
+  "author": "Schwarz-Mike",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Schwarz-Mike/mcp-ffmpeg"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0",
+    "tsx": "^4.19.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

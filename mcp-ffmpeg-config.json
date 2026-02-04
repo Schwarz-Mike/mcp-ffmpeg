@@ -1,0 +1,42 @@
+{
+  "mode": "local",
+  "local": {
+    "ffmpegPath": "C:\\Users\\ich\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.0.1-full_build\\bin\\ffmpeg.exe",
+    "ffprobePath": "C:\\Users\\ich\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.0.1-full_build\\bin\\ffprobe.exe",
+    "outputDir": "C:\\Users\\ich\\Dropbox\\mike\\MCP Servers\\ffmpeg\\output",
+    "keepIntermediateFiles": false
+  },
+  "remote": {
+    "apiUrl": "https://api.example.com/ffmpeg",
+    "apiKey": "",
+    "timeout": 300000
+  },
+  "quality": {
+    "format": "mp3",
+    "codec": "libmp3lame",
+    "bitrate": "192k",
+    "sampleRate": 44100,
+    "channels": 2,
+    "quality": 2
+  },
+  "meditation": {
+    "compression": {
+      "threshold": "-20dB",
+      "ratio": 3,
+      "attack": 200,
+      "release": 800,
+      "makeupGain": 0
+    },
+    "normalization": {
+      "targetLoudness": -16,
+      "truePeak": -1.5,
+      "loudnessRange": 11
+    },
+    "tempo": 0.9,
+    "musicVolume": 0.3,
+    "soundsVolume": 0.2,
+    "fadeInDuration": 3,
+    "fadeOutDuration": 3,
+    "finalBoost": 1.75
+  }
+}
