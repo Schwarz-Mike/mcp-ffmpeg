@@ -7,14 +7,27 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as os from 'os';
 import { execSync } from 'child_process';
+import { fileURLToPath } from 'url';
 import type { FFmpegConfig, LocalConfig } from './types.js';
 import {
   WINDOWS_FFMPEG_PATHS,
   WINDOWS_FFPROBE_PATHS,
-  DEFAULT_OUTPUT_DIR,
   AUDIO_QUALITY,
   MEDITATION_DEFAULTS,
 } from './defaults.js';
+
+// Get the install directory of the MCP server
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const INSTALL_DIR = path.resolve(__dirname, '..', '..'); // Go up from dist/config to root
+
+/**
+ * Get the default output directory based on install location
+ */
+function getDefaultOutputDir(): string {
+  const outputDir = path.join(INSTALL_DIR, 'output');
+  return outputDir;
+}
 
 /**
  * Expand environment variables in a path
@@ -167,7 +180,7 @@ function mergeConfig(loaded: Partial<FFmpegConfig>): FFmpegConfig {
   const defaultLocal: LocalConfig = {
     ffmpegPath: ffmpegPath || 'ffmpeg',
     ffprobePath: ffprobePath || 'ffprobe',
-    outputDir: process.platform === 'win32' ? DEFAULT_OUTPUT_DIR : path.join(os.homedir(), 'mcp-ffmpeg-output'),
+    outputDir: getDefaultOutputDir(),
     keepIntermediateFiles: false,
   };
 

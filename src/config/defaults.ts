@@ -32,7 +32,7 @@ export const WINDOWS_FFPROBE_PATHS = [
   'C:\\Program Files (x86)\\ffmpeg\\bin\\ffprobe.exe',
 ];
 
-export const DEFAULT_OUTPUT_DIR = 'C:\\Users\\ich\\Dropbox\\mike\\MCP Servers\\ffmpeg\\output';
+// Output directory is now dynamic - set in config/index.ts based on install location
 
 export const AUDIO_QUALITY: AudioQualityConfig = {
   format: 'mp3',
